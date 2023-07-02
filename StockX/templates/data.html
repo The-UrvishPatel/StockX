@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockX</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+        
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .line
+        {
+            height: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px 5px 10px 5px;
+            gap: 10px;
+            background-color: rgb(250, 250, 250);
+            margin: 5px;
+            border-bottom: 2px solid rgb(50, 50, 50,0.1);
+        }
+
+        .title
+        {
+            background-color: rgb(230, 230, 230);
+            padding: 10px;
+            color: rgb(50, 50, 50);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: 2px solid rgb(49, 49, 49,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .span
+        {
+            width: auto;
+            padding: 10px 10px 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 100);
+            color: white;
+        }
+
+        .logo
+        {
+            padding: 10px;
+            color: rgb(0, 0, 126);
+            font-size: 30px;
+            text-align: center;
+            filter: drop-shadow(0 0 100px rgb(255, 255, 255));
+        }
+
+        .red
+        {
+            width: auto;
+            padding: 10px 10px 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 100);
+            color: white;
+            border: 2px solid rgb(255, 0, 0);
+        }
+        
+        .green
+        {
+            width: auto;
+            padding: 10px 10px 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 100);
+            color: white;
+            border: 2px solid rgb(0, 255, 0);
+        }
+        
+        .white
+        {
+            width: auto;
+            padding: 10px 10px 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 100);
+            color: white;
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        img
+        {
+            width: 90%;
+        }
+
+        .title-name
+        {
+            padding: 20px;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(0,0,100);
+            color: white;
+            font-size: 25px;
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="logo"><h3>StockX</h3></div>    
+
+    <div class="line">
+
+        <div class="title">Stocks</div>
+
+        <span class="span">
+            {% for i in cd.name.0 %}
+                {{i}}
+            {% endfor %}
+        </span>
+        
+        <span class="span">
+        {% for i in cd.name.1 %}
+            {{i}}
+        {% endfor %}
+        </span>
+    </div>
+    
+    
+    <p class="title-name">Economical Details</p>
+    
+    <div class="line">
+        <div class="title">Market Capitalization</div>
+        <span class={{  cd.market_capitalization0 }}>{{ cd.market_capitalization.0 }}</span>
+        <span class={{  cd.market_capitalization1 }}>{{ cd.market_capitalization.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Enterprise Value</div>
+        <span class={{  cd.enterprise_value0 }}>{{ cd.enterprise_value.0 }}</span>
+        <span class={{  cd.enterprise_value1 }}>{{ cd.enterprise_value.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Trailing PE</div>
+        <span class={{  cd.trailing_pe0 }}>{{ cd.trailing_pe.0 }}</span>
+        <span class={{  cd.trailing_pe1 }}>{{ cd.trailing_pe.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Forward PE</div>
+        <span class={{  cd.forward_pe0 }}>{{ cd.forward_pe.0 }}</span>
+        <span class={{  cd.forward_pe1 }}>{{ cd.forward_pe.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Profit Margin</div>
+        <span class={{  cd.profit_margin0 }}>{{ cd.profit_margin.0 }}</span>
+        <span class={{  cd.profit_margin1 }}>{{ cd.profit_margin.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Revenue Per Share (ttm)</div>
+        <span class={{  cd.revenue_per_share_ttm0 }}>{{ cd.revenue_per_share_ttm.0 }}</span>
+        <span class={{  cd.revenue_per_share_ttm1 }}>{{ cd.revenue_per_share_ttm.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Quarterly Revenue Growth</div>
+        <span class={{  cd.quarterly_revenue_growth0 }}>{{ cd.quarterly_revenue_growth.0 }}</span>
+        <span class={{  cd.quarterly_revenue_growth1 }}>{{ cd.quarterly_revenue_growth.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Ebitda</div>
+        <span class={{  cd.ebitda0 }}>{{ cd.ebitda.0 }}</span>
+        <span class={{  cd.ebitda1 }}>{{ cd.ebitda.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Cash per Share MRQ</div>
+        <span class={{  cd.total_cash_per_share_mrq0 }}>{{ cd.total_cash_per_share_mrq.0 }}</span>
+        <span class={{  cd.total_cash_per_share_mrq1 }}>{{ cd.total_cash_per_share_mrq.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Debt To Equity MRQ</div>
+        <span class={{  cd.total_debt_to_equity_mrq0 }}>{{ cd.total_debt_to_equity_mrq.0 }}</span>
+        <span class={{  cd.total_debt_to_equity_mrq1 }}>{{ cd.total_debt_to_equity_mrq.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Short Ratio</div>
+        <span class={{  cd.short_ratio0 }}>{{ cd.short_ratio.0 }}</span>
+        <span class={{  cd.short_ratio1 }}>{{ cd.short_ratio.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Percent Held By Insiders</div>
+        <span class={{  cd.percent_held_by_insiders0 }}>{{ cd.percent_held_by_insiders.0 }}</span>
+        <span class={{  cd.percent_held_by_insiders1 }}>{{ cd.percent_held_by_insiders.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Percent Held By Institutions</div>
+        <span class={{  cd.percent_held_by_institutions0 }}>{{ cd.percent_held_by_institutions.0 }}</span>
+        <span class={{  cd.percent_held_by_institutions1 }}>{{ cd.percent_held_by_institutions.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Fifty Two Week Change</div>
+        <span class={{  cd.fifty_two_week_change0 }}>{{ cd.fifty_two_week_change.0 }}</span>
+        <span class={{  cd.fifty_two_week_change1 }}>{{ cd.fifty_two_week_change.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Day50 MA</div>
+        <span class={{  cd.day_50_ma0 }}>{{ cd.day_50_ma.0 }}</span>
+        <span class={{  cd.day_50_ma1 }}>{{ cd.day_50_ma.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Day200 MA</div>
+        <span class={{  cd.day_200_ma0 }}>{{ cd.day_200_ma.0 }}</span>
+        <span class={{  cd.day_200_ma1 }}>{{ cd.day_200_ma.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Trailing Annual Dividend Rate</div>
+        <span class={{  cd.trailing_annual_dividend_rate0 }}>{{ cd.trailing_annual_dividend_rate.0 }}</span>
+        <span class={{  cd.trailing_annual_dividend_rate1 }}>{{ cd.trailing_annual_dividend_rate.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Forward Annual Dividend Rate</div>
+        <span class={{  cd.forward_annual_dividend_rate0 }}>{{ cd.forward_annual_dividend_rate.0 }}</span>
+        <span class={{  cd.forward_annual_dividend_rate1 }}>{{ cd.forward_annual_dividend_rate.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">5year Average Dividend Yield</div>
+        <span class={{  cd.5_year_average_dividend_yield0 }}>{{ cd.5_year_average_dividend_yield.0 }}</span>
+        <span class={{  cd.5_year_average_dividend_yield1 }}>{{ cd.5_year_average_dividend_yield.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Payout Ratio</div>
+        <span class={{  cd.payout_ratio0 }}>{{ cd.payout_ratio.0 }}</span>
+        <span class={{  cd.payout_ratio1 }}>{{ cd.payout_ratio.1 }}</span>
+    </div>
+    
+    <p class="title-name">Price History</p>
+    
+    <div class="line">
+        <div class="title">Open</div>
+        <span class={{  cd.open0 }}>{{ cd.open.0 }}</span>
+        <span class={{  cd.open1 }}>{{ cd.open.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">High</div>
+        <span class={{  cd.high0 }}>{{ cd.high.0 }}</span>
+        <span class={{  cd.high1 }}>{{ cd.high.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Low</div>
+        <span class={{  cd.low0 }}>{{ cd.low.0 }}</span>
+        <span class={{  cd.low1 }}>{{ cd.low.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Close</div>
+        <span class={{  cd.close0 }}>{{ cd.close.0 }}</span>
+        <span class={{  cd.close1 }}>{{ cd.close.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Volume</div>
+        <span class={{  cd.volume0 }}>{{ cd.volume.0 }}</span>
+        <span class={{  cd.volume1 }}>{{ cd.volume.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Previous Close</div>
+        <span class={{  cd.previous_close0 }}>{{ cd.previous_close.0 }}</span>
+        <span class={{  cd.previous_close1 }}>{{ cd.previous_close.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Change</div>
+        <span class={{  cd.change0 }}>{{ cd.change.0 }}</span>
+        <span class={{  cd.change1 }}>{{ cd.change.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Percent Change</div>
+        <span class={{  cd.percent_change0 }}>{{ cd.percent_change.0 }}</span>
+        <span class={{  cd.percent_change1 }}>{{ cd.percent_change.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Fifty Two Week High Change Percent</div>
+        <span class={{  cd.fifty_two_week_high_change_percent0 }}>{{ cd.fifty_two_week_high_change_percent.0 }}</span>
+        <span class={{  cd.fifty_two_week_high_change_percent1 }}>{{ cd.fifty_two_week_high_change_percent.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Fifty Two Week Low Change Percent</div>
+        <span class={{  cd.fifty_two_week_low_change_percent0 }}>{{ cd.fifty_two_week_low_change_percent.0 }}</span>
+        <span class={{  cd.fifty_two_week_low_change_percent1 }}>{{ cd.fifty_two_week_low_change_percent.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Price</div>
+        <span class={{  cd.price0 }}>{{ cd.price.0 }}</span>
+        <span class={{  cd.price1 }}>{{ cd.price.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Sector</div>
+        <span class={{  cd.sector0 }}>{{ cd.sector.0 }}</span>
+        <span class={{  cd.sector1 }}>{{ cd.sector.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Amount</div>
+        <span class={{  cd.amount0 }}>{{ cd.amount.0 }}</span>
+        <span class={{  cd.amount1 }}>{{ cd.amount.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Gross Profit</div>
+        <span class={{  cd.gross_profit0 }}>{{ cd.gross_profit.0 }}</span>
+        <span class={{  cd.gross_profit1 }}>{{ cd.gross_profit.1 }}</span>
+    </div>
+
+
+    <p class="title-name">Assets and Liabilities</p>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Current Assets</div>
+        <span class={{  cd.total_current_assets0 }}>{{ cd.total_current_assets.0 }}</span>
+        <span class={{  cd.total_current_assets1 }}>{{ cd.total_current_assets.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Non Current Assets</div>
+        <span class={{  cd.total_non_current_assets0 }}>{{ cd.total_non_current_assets.0 }}</span>
+        <span class={{  cd.total_non_current_assets1 }}>{{ cd.total_non_current_assets.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Assets</div>
+        <span class={{  cd.total_assets0 }}>{{ cd.total_assets.0 }}</span>
+        <span class={{  cd.total_assets1 }}>{{ cd.total_assets.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Current Liabilities</div>
+        <span class={{  cd.total_current_liabilities0 }}>{{ cd.total_current_liabilities.0 }}</span>
+        <span class={{  cd.total_current_liabilities1 }}>{{ cd.total_current_liabilities.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Non Current Liabilities</div>
+        <span class={{  cd.total_non_current_liabilities0 }}>{{ cd.total_non_current_liabilities.0 }}</span>
+        <span class={{  cd.total_non_current_liabilities1 }}>{{ cd.total_non_current_liabilities.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Liabilities</div>
+        <span class={{  cd.total_liabilities0 }}>{{ cd.total_liabilities.0 }}</span>
+        <span class={{  cd.total_liabilities1 }}>{{ cd.total_liabilities.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Total Shareholders Equity</div>
+        <span class={{  cd.total_shareholders_equity0 }}>{{ cd.total_shareholders_equity.0 }}</span>
+        <span class={{  cd.total_shareholders_equity1 }}>{{ cd.total_shareholders_equity.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">End Cash Position</div>
+        <span class={{  cd.end_cash_position0 }}>{{ cd.end_cash_position.0 }}</span>
+        <span class={{  cd.end_cash_position1 }}>{{ cd.end_cash_position.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Income Tax Paid</div>
+        <span class={{  cd.income_tax_paid0 }}>{{ cd.income_tax_paid.0 }}</span>
+        <span class={{  cd.income_tax_paid1 }}>{{ cd.income_tax_paid.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Interest Paid</div>
+        <span class={{  cd.interest_paid0 }}>{{ cd.interest_paid.0 }}</span>
+        <span class={{  cd.interest_paid1 }}>{{ cd.interest_paid.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Free Cash Flow</div>
+        <span class={{  cd.free_cash_flow0 }}>{{ cd.free_cash_flow.0 }}</span>
+        <span class={{  cd.free_cash_flow1 }}>{{ cd.free_cash_flow.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Current Quarter</div>
+        <span class={{  cd.current_quarter0 }}>{{ cd.current_quarter.0 }}</span>
+        <span class={{  cd.current_quarter1 }}>{{ cd.current_quarter.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Next Quarter</div>
+        <span class={{  cd.next_quarter0 }}>{{ cd.next_quarter.0 }}</span>
+        <span class={{  cd.next_quarter1 }}>{{ cd.next_quarter.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Current Year</div>
+        <span class={{  cd.current_year0 }}>{{ cd.current_year.0 }}</span>
+        <span class={{  cd.current_year1 }}>{{ cd.current_year.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Next Year</div>
+        <span class={{  cd.next_year0 }}>{{ cd.next_year.0 }}</span>
+        <span class={{  cd.next_year1 }}>{{ cd.next_year.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Next 5years PA</div>
+        <span class={{  cd.next_5_years_pa0 }}>{{ cd.next_5_years_pa.0 }}</span>
+        <span class={{  cd.next_5_years_pa1 }}>{{ cd.next_5_years_pa.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Past 5years PA</div>
+        <span class={{  cd.past_5_years_pa0 }}>{{ cd.past_5_years_pa.0 }}</span>
+        <span class={{  cd.past_5_years_pa1 }}>{{ cd.past_5_years_pa.1 }}</span>
+    </div>
+    
+
+    <p class="title-name">Recommendation</p>
+
+    
+    <div class="line">
+        <div class="title">Strong Buy</div>
+        <span class={{  cd.strong_buy0 }}>{{ cd.strong_buy.0 }}</span>
+        <span class={{  cd.strong_buy1 }}>{{ cd.strong_buy.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Buy</div>
+        <span class={{  cd.buy0 }}>{{ cd.buy.0 }}</span>
+        <span class={{  cd.buy1 }}>{{ cd.buy.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Hold</div>
+        <span class={{  cd.hold0 }}>{{ cd.hold.0 }}</span>
+        <span class={{  cd.hold1 }}>{{ cd.hold.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Sell</div>
+        <span class={{  cd.sell0 }}>{{ cd.sell.0 }}</span>
+        <span class={{  cd.sell1 }}>{{ cd.sell.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Strong Sell</div>
+        <span class={{  cd.strong_sell0 }}>{{ cd.strong_sell.0 }}</span>
+        <span class={{  cd.strong_sell1 }}>{{ cd.strong_sell.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Rating</div>
+        <span class={{  cd.rating0 }}>{{ cd.rating.0 }}</span>
+        <span class={{  cd.rating1 }}>{{ cd.rating.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Median</div>
+        <span class={{  cd.median0 }}>{{ cd.median.0 }}</span>
+        <span class={{  cd.median1 }}>{{ cd.median.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Average</div>
+        <span class={{  cd.average0 }}>{{ cd.average.0 }}</span>
+        <span class={{  cd.average1 }}>{{ cd.average.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Current</div>
+        <span class={{  cd.current0 }}>{{ cd.current.0 }}</span>
+        <span class={{  cd.current1 }}>{{ cd.current.1 }}</span>
+    </div>
+    
+    
+    
+    <div class="line">
+        <div class="title">Linearregslope</div>
+        <span class={{  cd.linearregslope0 }}>{{ cd.linearregslope.0 }}</span>
+        <span class={{  cd.linearregslope1 }}>{{ cd.linearregslope.1 }}</span>
+    </div>
+    
+    <p class="title-name">Price Graphs</p>
+
+    {% comment %} <img src="\images\hey.png" alt=""> {% endcomment %}
+
+        <img src="\images\Portfolio1price.png" alt="">
+        <img src="\images\Portfolio2price.png" alt="">
+
+        <p class="title-name">Moving Averages Graph</p>
+        
+        <img src="\images\Portfolio1mavg.png" alt="">
+        <img src="\images\Portfolio2mavg.png" alt="">
+
+        <p class="title-name">Prediction</p>
+        
+        <img src="\images\Portfolio1predict.png" alt="">
+        <img src="\images\Portfolio2predict.png"alt="">
+</body>
+</html>
